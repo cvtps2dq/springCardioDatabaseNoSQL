@@ -2,6 +2,7 @@ package ru.cv2.springmongodb.services;
 
 import ru.cv2.springmongodb.documents.Patient;
 
+import java.util.Arrays;
 import java.util.List;
 
 public interface PatientService {
@@ -13,4 +14,5 @@ public interface PatientService {
     Patient savePatient(Patient patient);
     void deletePatient(String id);
     Patient updatePatient(String id, Patient updatedPatient);
+    List<Patient> findAll();
 }

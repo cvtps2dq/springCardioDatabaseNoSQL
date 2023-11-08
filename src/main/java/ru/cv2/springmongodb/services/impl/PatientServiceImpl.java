@@ -1,12 +1,15 @@
 package ru.cv2.springmongodb.services.impl;
 
+import org.springframework.stereotype.Service;
 import ru.cv2.springmongodb.documents.Patient;
 import ru.cv2.springmongodb.repositories.PatientRepository;
 import ru.cv2.springmongodb.services.PatientService;
 
 import java.util.List;
 
+@Service
 public class PatientServiceImpl implements PatientService {
+
     private final PatientRepository patientRepository;
 
     public PatientServiceImpl(PatientRepository patientRepository) {
@@ -54,5 +57,10 @@ public class PatientServiceImpl implements PatientService {
         patient.setDiagnosis(updatedPatient.getDiagnosis());
         patient.setBlockId(updatedPatient.getBlockId());
         return patientRepository.save(patient);
+    }
+
+    @Override
+    public List<Patient> findAll() {
+        return patientRepository.findAll();
     }
 }
