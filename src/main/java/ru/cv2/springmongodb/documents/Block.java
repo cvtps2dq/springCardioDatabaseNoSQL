@@ -3,11 +3,10 @@ package ru.cv2.springmongodb.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ru.cv2.springmongodb.abstracts.BaseEntity;
 
 @Document(collection = "blocks")
-public class Block {
-    @Id
-    private String id;
+public class Block extends BaseEntity {
     private String phoneNumber;
     private String zip;
     private String address;

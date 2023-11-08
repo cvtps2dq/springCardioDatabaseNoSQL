@@ -3,18 +3,14 @@ package ru.cv2.springmongodb.documents;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ru.cv2.springmongodb.abstracts.ExtendedBaseEntity;
 
 @Document(collection = "patients")
 @CompoundIndex(def = "{'name': 1}", unique = true, background = false, sparse = false)
-public class Patient {
-    @Id
-    private String id;
-    private String name;
-    private String surname;
+public class Patient extends ExtendedBaseEntity {
     private Integer age;
     private String diagnosis;
     private String condition;
-    private String blockId;
 
     public Patient() {
     }
