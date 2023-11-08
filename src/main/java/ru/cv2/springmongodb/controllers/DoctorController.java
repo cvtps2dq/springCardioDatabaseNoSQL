@@ -7,7 +7,7 @@ import ru.cv2.springmongodb.services.DoctorService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/patient")
+@RequestMapping("/api/doctor")
 public class DoctorController {
 
     private final DoctorService doctorService;
@@ -15,7 +15,6 @@ public class DoctorController {
     public DoctorController(DoctorService doctorService) {
         this.doctorService = doctorService;
     }
-
 
     @GetMapping("/all")
     public List<Doctor> getAll(){
